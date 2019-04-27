@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { parsed: localEnv } = require('dotenv').config();
+const webpack = require('webpack');
+
 const withTypescript = require('@zeit/next-typescript');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -20,6 +23,7 @@ const tsConfigCompilerPaths = aliases.reduce(
 module.exports = withTypescript({
   webpack(config, options) {
     // make "import 'components/Foo';" etc. work
+    config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
     config.resolve = {
       ...config.resolve,
       alias: {

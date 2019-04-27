@@ -9,7 +9,7 @@ import {
 } from 'next/document';
 
 class Document extends NextDocument {
-  static async getInitialProps(context: NextDocumentContext) {
+  static async getInitialProps(context) {
     const props = await super.getInitialProps(context);
 
     return {

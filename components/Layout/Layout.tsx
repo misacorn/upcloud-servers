@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from 'components/Wrapper';
 import css from 'styled-jsx/css';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 import globalStyles from './globalStyles';
 import styles from './styles';
@@ -32,8 +32,12 @@ class Layout extends React.Component {
               alt="UpCloud logo"
             />
             <nav className="app-nav">
-              <a href="#">Servers</a>
-              <a href="#">Storages</a>
+              <Link href="/">
+                <a>Servers</a>
+              </Link>
+              <Link href="/storages">
+                <a>Storages</a>
+              </Link>
             </nav>
           </Wrapper>
         </header>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { default as NextApp, Container, NextAppContext } from 'next/app';
+import { default as NextApp, Container } from 'next/app';
 import Layout from 'components/Layout';
 import ClientOnly from 'components/ClientOnly';
 
 class App extends NextApp {
-  static async getInitialProps({ Component, ctx }: NextAppContext) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
